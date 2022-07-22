@@ -17,10 +17,13 @@
             console.log('test2');
         }
         var fn = new Fn();
-        
+        //函数对象的显式原型
         console.log(Fn.prototype instanceof Object);
+        //实例对象的隐式原型
         console.log(fn.__proto__ instanceof Object);
+
         console.log(Fn.prototype === fn.__proto__);
+        //Object对象的隐式原型
         console.log(Object.__proto__);
 
     </script>
