@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_IIFE</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Fn(){
+            this.test1 = function(){
+                console.log('test1()');
+            }
+        }
+        Fn.prototype.test2 = function(){
+            console.log('test2');
+        }
+        var fn = new Fn();
+        
+        console.log(Fn.prototype instanceof Object);
+        console.log(fn.__proto__ instanceof Object);
+        console.log(Fn.prototype === fn.__proto__);
+        console.log(Object.__proto__);
+
+    </script>
+</body>
+</html>     
