@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //父类型
+        function father() {
+            this.fProp = console.log("father property");
+        }
+        //子类型
+        function child() {
+            this.cProp = console.log("child property");
+        }
+        //为父类型的原型添加方法
+        father.prototype.showFatherProp = function () {
+            console.log(this.fProp);
+        }
+        //子类型的原型为父类型的一个实例对象
+        child.prototype = new father()
+        //为子类型的原型添加方法
+        child.prototype.showChildProp = function () {
+            console.log(this.cProp);
+        }
+
+        var c = new child()
+        c.showChildProp()
+        c.showFatherProp()
+    </script>
+</body>
+</html>
