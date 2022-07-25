@@ -22,6 +22,8 @@
         }
         //子类型的原型为父类型的一个实例对象
         child.prototype = new father()
+        //修正
+        child.prototype.constructor = child
         //为子类型的原型添加方法
         child.prototype.showChildProp = function () {
             console.log(this.cProp);
